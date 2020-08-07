@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+    <!-- Domain model configuration -->
+    <solutionClass>com.examples.domain.CloudBalance</solutionClass>
+    <entityClass>com.examples.domain.CloudProcess</entityClass>
+
+    <!-- Score configuration -->
+    <scoreDirectorFactory>
+        <easyScoreCalculatorClass>
+            com.examples.solver.score.CloudBalancingEasyScoreCalculator
+        </easyScoreCalculatorClass>
+        <scoreDrl>
+            com/examples/solver/cloudBalancingConstraints.drl
+        </scoreDrl>
+    </scoreDirectorFactory>
+
+    <!-- Optimization algorithms configuration -->
+    <termination>
+        <secondsSpentLimit>30</secondsSpentLimit>
+    </termination>
+</solver>
